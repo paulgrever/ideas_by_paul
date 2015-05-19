@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Idea, type: :model do
-
   it "is valid with all credentials" do
     @idea = Idea.create(title: "Title 1", body: "Body 1", quality: 0)
     expect(@idea.title).to eq("Title 1")
