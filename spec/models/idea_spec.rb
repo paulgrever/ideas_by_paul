@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe Idea, type: :model do
   it "is valid with all credentials" do
@@ -14,7 +14,7 @@ RSpec.describe Idea, type: :model do
   end
 
   it "is invalid without a title" do
-    @idea = Idea.new( body: "Body 1")
+    @idea = Idea.new(body: "Body 1")
     expect(@idea).to_not be_valid
   end
 
