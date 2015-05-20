@@ -7,16 +7,24 @@ RSpec.describe "Edits", type: :feature do
 
   it "can access the edit page", js:true do
     visit ideas_path
-    click_link_or_button("Edit Info")
+    click_link_or_button("Edit Idea")
     expect(current_path).to eq(edit_idea_path(idea))
   end
 
   it "can edit the title", js:true do
     visit ideas_path
-    click_link_or_button("Edit Info")
+    click_link_or_button("Edit Idea")
     fill_in("idea[title]", with: "New Title")
     click_link_or_button("Update Idea")
     expect(current_path).to eq(ideas_path)
     expect(page).to have_content("New Title")
+  end
+
+  it "can't edit the title to blank", js:true do 
+    visit ideas_path
+    click_link_or_button("Edit Idea")
+    fill_in("idea[title]", with: "")
+    click_link_or_button("Update Idea")
+    expect(current_path).to eq(edit_idea_path(idea))
   end
 end

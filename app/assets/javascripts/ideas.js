@@ -9,7 +9,7 @@ $( document ).ready(function() {
                                       "<h4>" + idea.title + "</h4>" +
                                       "<h5>" + idea.body + "</h5>" +
                                       "<h5>" + idea.quality + "</h5>" +
-                                      "<a href=/ideas/"+ idea.id +"/edit class='btn btn-info spacer'>Edit Info</a>" +
+                                      "<a href=/ideas/"+ idea.id +"/edit class='btn btn-info spacer'>Edit Idea</a>" +
                                       "<button class='spacer delete-btn btn btn-danger' data-id=" + idea.id + ">Delete</button>" +
                                   "</div>");
       });

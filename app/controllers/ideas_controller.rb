@@ -13,7 +13,7 @@ class IdeasController < ApplicationController
     if @idea.update(idea_params)
       redirect_to ideas_path
     else
-      render(:new)
+      redirect_to edit_idea_path(@idea)
     end
 
   end
