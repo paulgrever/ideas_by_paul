@@ -3,3 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+$text-color: #000000;
+
+.box {
+  border: 1px $text-color solid;
+}
