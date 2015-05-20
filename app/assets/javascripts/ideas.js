@@ -9,7 +9,8 @@ $( document ).ready(function() {
                                       "<h4>" + idea.title + "</h4>" +
                                       "<h5>" + idea.body + "</h5>" +
                                       "<h5>" + idea.quality + "</h5>" +
-                                      "<button class='spacer delete-btn' data-id=" + idea.id + ">Delete</button>" +
+                                      "<a href=/ideas/"+ idea.id +"/edit class='btn btn-info spacer'>Edit Info</a>" +
+                                      "<button class='spacer delete-btn btn btn-danger' data-id=" + idea.id + ">Delete</button>" +
                                   "</div>");
       });
     }
@@ -31,7 +32,7 @@ $( document ).ready(function() {
                                       "<h4>" + data.title + "</h4>" +
                                       "<h5>" + data.body + "</h5>" +
                                       "<h5>" + data.quality + "</h5>" +
-                                      "<button class='spacer delete-btn' data-id=" + data.id + ">Delete</button>" +
+                                      "<button class='spacer delete-btn btn btn-danger' data-id=" + data.id + ">Delete</button>" +
                                   "</div>" );
 
         $("#idea-title").val("");
