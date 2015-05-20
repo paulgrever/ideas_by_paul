@@ -15,5 +15,4 @@ class IdeasController < ApplicationController
                                  :body,
                                  :quality)
   end
-
 end

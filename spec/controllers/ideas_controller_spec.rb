@@ -15,11 +15,11 @@ RSpec.describe IdeasController, type: :controller do
 
   it "create" do
     expect(Idea.count).to eq(1)
-    post :create, format: :json, idea:{title: "created title",
-                                       body: "created body"}
+    post :create, format: :json, idea:{ title: "created title",
+                                        body: "created body" }
     expect(response.status).to eq(201)
     expect(Idea.count).to eq(2)
     new_idea = JSON.parse(response.body, symbolize_names: true)
-    expect(new_idea[:title]).to eq("created title") 
+    expect(new_idea[:title]).to eq("created title")
   end
 end
