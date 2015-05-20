@@ -9,10 +9,12 @@ $( document ).ready(function() {
                                       "<h4>" + idea.title + "</h4>" +
                                       "<h5>" + idea.body + "</h5>" +
                                       "<h5>" + idea.quality + "</h5>" +
-                                  "</div>" );
+                                      "<button class='spacer delete-btn' data-id=" + idea.id + ">Delete</button>" +
+                                  "</div>");
       });
     }
   });
+
 
   $("#submit").on("click", function(){
     var $title = $("#idea-title").val();
@@ -24,16 +26,28 @@ $( document ).ready(function() {
               title: $title,
               body: $body }
             },
-      success: function(data){
+        success: function(data){
         $( "#idea-index" ).append("<div class='box'>" +
                                       "<h4>" + data.title + "</h4>" +
                                       "<h5>" + data.body + "</h5>" +
                                       "<h5>" + data.quality + "</h5>" +
+                                      "<button class='spacer delete-btn' data-id=" + data.id + ">Delete</button>" +
                                   "</div>" );
 
         $("#idea-title").val("");
         $("#idea-body").val("");
       }
+    });
+  });
+  $("body").on("click", ".delete-btn", function(){
+    var $id = $(this).data().id;
+    var $box = $(this).parent();
+    $.ajax({dataType: "json",
+            url: "/ideas/" + $id + ".json",
+            method: "DELETE",
+            success: function(){
+              $box.remove();
+            }
     });
   });
 });
