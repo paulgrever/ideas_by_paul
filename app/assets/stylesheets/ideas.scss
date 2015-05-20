@@ -4,6 +4,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+$text-color: #000000;
 .box {
-  border: 1px black solid;
+  border: 1px $text-color solid;
 }
