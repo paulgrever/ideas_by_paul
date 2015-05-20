@@ -14,7 +14,7 @@ $( document ).ready(function() {
     }
   });
 
-  $('#submit').on("click", function(){
+  $("#submit").on("click", function(){
     var $title = $("#idea-title").val();
     var $body = $("#idea-body").val();
     $.ajax({dataType: "json",
