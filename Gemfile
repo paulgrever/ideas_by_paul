@@ -25,6 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rspec-rails'
 gem "bootstrap-sass", "~> 3.3.4"
 gem "responders"
+gem "selenium-webdriver"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -43,6 +44,8 @@ group :development, :test do
   gem "launchy"
   gem "pry"
   gem "factory_girl_rails"
+  gem "selenium-webdriver"
+  gem "database_cleaner"
 end
 
 group :test do
