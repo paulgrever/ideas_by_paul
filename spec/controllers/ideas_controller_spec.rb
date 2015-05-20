@@ -22,4 +22,10 @@ RSpec.describe IdeasController, type: :controller do
     new_idea = JSON.parse(response.body, symbolize_names: true)
     expect(new_idea[:title]).to eq("created title")
   end
+
+  it "destroys" do
+    expect(Idea.count).to eq(1)
+    delete :destroy, format: :json, id: @idea
+    expect(Idea.count).to eq(0)
+  end
 end

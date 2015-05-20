@@ -8,6 +8,10 @@ class IdeasController < ApplicationController
     respond_with Idea.create(idea_params)
   end
 
+  def destroy
+    respond_with Idea.destroy(params[:id])
+  end
+
   private
 
   def idea_params
