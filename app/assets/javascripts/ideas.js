@@ -6,13 +6,13 @@ $( document ).ready(function() {
     success: function( data ) {
       data.forEach(function(idea) {
         $( "#idea-index" ).append("<div class='box'>" +
-                                      "<h4>" + idea.title + "</h4>" +
+                                      "<h2>" + idea.title + "</h2>" +
                                       "<h5>" + idea.body + "</h5>" +
-                                      "<h5 class='idea-quality'>"+
+                                      "<h2 class='idea-quality'>"+
                                         "<a href=#/ class='btn btn-sm minus btn-danger' data-minus="+ idea.id + " data-quality="+ idea.quality + "><i class='fa  fa-bomb'></i></a> " +
                                         "<span class=txt>" + idea.quality + " </span>" +
                                         " <a href=#/ class='btn btn-sm  btn-warning plus' data-plus="+ idea.id + " data-quality="+ idea.quality + "><i class='fa fa-rocket'></i></a>" +
-                                      "</h5>" +
+                                      "</h2>" +
                                       "<a href=/ideas/"+ idea.id +"/edit class='btn btn-info spacer'><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span> Edit Idea</a>" +
                                       "<button class='spacer delete-btn btn btn-danger' data-id=" + idea.id + "><span class='glyphicon glyphicon-trash' aria-hidden='true'></span> Delete</button>" +
                                   "</div>");
@@ -33,13 +33,13 @@ $( document ).ready(function() {
             },
         success: function(data){
         $( "#idea-index" ).append("<div class='box'>" +
-                                      "<h4>" + data.title + "</h4>" +
+                                      "<h2>" + data.title + "</h2>" +
                                       "<h5>" + data.body + "</h5>" +
-                                      "<h5 class='idea-quality'>"+
+                                      "<h2 class='idea-quality'>"+
                                         "<a href=#/ class='btn btn-sm btn-danger minus' data-minus="+ data.id + " data-quality="+ data.quality +"><i class='fa fa-bomb'></i></a>" +
                                         "<span class=txt>" + data.quality + " </span>" +
                                         "<ahref=#/ class='btn btn-sm btn-warning plus' data-plus="+ data.id + " data-quality="+ data.quality + "><i class='fa fa-rocket'></i></a>" +
-                                      "</h5>" +
+                                      "</h2>" +
                                       "<a href=/ideas/"+ data.id +"/edit class='btn btn-info spacer'><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span> Edit Idea</a>" +
                                       "<button class='spacer delete-btn btn btn-danger' data-id=" + data.id + ">Delete</button>" +
                                   "</div>" );
