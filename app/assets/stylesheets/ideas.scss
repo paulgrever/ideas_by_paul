@@ -5,12 +5,22 @@
 @import "bootstrap";
 
 $text-color: #000000;
-
-.box {
-  border: 1px $text-color solid;
-}
+$text-color: #ffffff;
+$idea: #F4FDAF;
 
 .spacer {
   padding: 5px;
   margin: 10px;
+}
+
+body{
+  background-image: image-url("paul.png");
+  background-size: cover;
+  height: 100vh;
+  color: $text-color
+}
+
+.idea-maker{
+  font-size: 60px;
+  color: $idea;
 }
