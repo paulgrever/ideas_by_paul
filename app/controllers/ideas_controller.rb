@@ -15,7 +15,6 @@ class IdeasController < ApplicationController
     else
       redirect_to edit_idea_path(@idea)
     end
-
   end
 
   def create
@@ -26,11 +25,16 @@ class IdeasController < ApplicationController
     respond_with Idea.destroy(params[:id])
   end
 
+  def quality
+    respond_with Idea.update(params[:id], idea_params)
+  end
+
   private
 
   def idea_params
     params.require(:idea).permit(:title,
                                  :body,
-                                 :quality)
+                                 :quality,
+                                 :id)
   end
 end
